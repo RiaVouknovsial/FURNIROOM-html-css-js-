@@ -1,0 +1,877 @@
+/* Убедитесь, что файл styles.css подключен */
+body {
+    margin: 0;
+    display: flex; /* Позволяет расположить left-menu и основной контент горизонтально */
+    flex-direction: row;
+    height: 100vh; /* Задает высоту страницы равной высоте окна */
+}
+
+html {
+    scroll-padding-top: 60px; /* Высота вашего меню */
+}
+
+/* Общие стили для контейнера */
+
+.container {
+    display: flex;
+    height: 100vh; }
+
+
+.left-menu {
+    width: 20vw; /* Задает ширину 20% */
+    background-color: #f4f4f4; /* Светлый фон для проверки */
+    padding: 20px; /* Отступы внутри */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Легкая тень справа */
+    overflow-y: auto; /* Скроллинг, если контент не вмещается */
+    color: darkgreen;
+    flex-direction: column;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+}
+.main-content {
+    width: 80vw; /* Задает ширину 20% */
+    overflow-y: auto; /* Позволяет прокручивать основной контент */
+}
+.left-menu ul {
+    list-style-type: none; /* Убирает точки у списков */
+    padding: 0; /* Убирает внутренние отступы у списка */
+    margin: 0; /* Убирает внешние отступы у списка */
+}
+
+.left-menu li {
+    margin: 10px 0; /* Отступ между пунктами меню */
+}
+.left-menu a {
+    text-decoration: none; /* Убирает подчеркивание ссылок */
+    color: darkgreen; /* Темно-зеленый цвет текста */
+    font-size: 16px;
+    display: flex; /* Для иконок и текста в одной строке */
+    align-items: center;
+    margin: 10px 0; /* Отступ между пунктами меню */
+}
+
+.left-menu .menu-icon {
+    width: 20px; /* Размер иконок */
+    height: 20px;
+    margin-right: 10px; /* Отступ справа от иконки */
+    object-fit: contain; /* Сохраняет пропорции изображения */
+}
+
+/* Подменю */
+.left-menu .submenu {
+    display: none; /* Скрывает подменю по умолчанию */
+    margin-left: 20px; /* Сдвигает подменю вправо */
+}
+
+.left-menu li:hover > .submenu {
+    display: block; /* Показываем подменю при наведении */
+} 
+
+.left-menu .submenu.active {
+    display: block; /* Показывает подменю при активации */
+}
+
+.footer {
+    width: 25vh; /* Задает ширину 20% */
+    background-color: #ddd; /* Цвет фона для тестирования */
+    text-align: center; /* Центрирует текст */
+   /* position: absolute ; /* Прикрепляет footer к низу экрана */
+    padding: 10px;
+    bottom: 0;
+    margin-top: auto; /* Прижимает футер к низу */
+}
+
+main {
+    flex: 1; /* Основной контент занимает оставшееся пространство */
+    padding: 20px; /* Внутренние отступы */
+    overflow-y: auto; /* Добавляет скроллинг для основного контента */
+}
+
+/* Устанавливаем фиксированные размеры для всех .png */
+img[src$=".png"] {
+    width: 20px;
+    height: 20px;
+    object-fit: contain; /* Сохраняет пропорции изображения */
+}
+
+.logo-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    top: 10px;
+}
+
+.company-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: darkgreen; 
+}
+
+.slogan {
+    font-size: 14px;
+    font-style: italic;
+    color: darkgreen;
+}
+
+@media screen and (max-width: 1152px){
+    .menu{       
+        width: 57px;
+        transition: .3s;       
+    }
+    #menuVertical ul li a{       
+        width: 57px;
+        transition: .3s;       
+    }
+
+    #menuVertical ul li{       
+        width: 57px;         
+    }
+
+    #menuVertical ul li ul li a{       
+       left: -141px;  
+    }
+
+    span{
+        display: none;
+    }
+
+    .footer{
+        transform: rotate(-90deg);
+        left: -77px;
+        border-right: 1px solid rgb(9, 42, 51); 
+         height: 24px;
+         bottom: 77px;
+         text-align: left;
+         padding-left: 11px;
+         padding-bottom: 25px;
+         padding-top: 6px;
+    }
+
+    .img_n img{
+        height: 40px;
+        margin-left: -7px;
+        margin-top: 9px;
+    }
+}
+
+@media screen and (min-width: 1152px){
+    .img_n img{       
+       display: none;   
+    }
+}
+
+.language-switcher {
+    display: flex;
+    gap: 10px;
+    margin: 20px;
+}
+
+button {
+    border: none;
+    background: none; /* Убираем фон кнопки */
+    cursor: pointer;
+    padding: 0;
+}
+
+button:hover {
+    opacity: 0.8; /* Эффект наведения */
+}
+
+.flag-icon {
+    width: 40px; /* Ширина изображения */
+    height: 30px; /* Высота изображения */
+    object-fit: contain; /* Сохраняет пропорции флагов */
+    border: 1px solid #ddd; /* Легкая рамка */
+    border-radius: 5px; /* Скругленные углы */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Тень */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Стиль для секции "ПРО НАС" */
+h1 {
+    color: darkgreen; /* Заголовок h1 зелёного цвета */
+}
+
+#about a {
+    color: black; /* Ссылка a чёрного цвета */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+#about p {
+    color: black; /* Текст параграфов чёрного цвета */
+}
+
+/* Стиль для секции "ПРОФІЛЬ КОМПАНІЇ" */
+#profile h2 {
+    color: black; /* Заголовок h2 чёрного цвета */
+}
+
+#profile a {
+    color: black; /* Ссылка a чёрного цвета */
+}
+
+#profile p {
+    color: black; /* Текст параграфов чёрного цвета */
+}
+
+/* Стиль для секции "ФІЛОСОФІЯ" */
+#philosophy h2 {
+    color: black;
+}
+
+#philosophy p {
+    color: black;
+}
+
+/* Стиль для секции "ПОСЛУГИ" */
+#services h2 {
+    color: black;
+}
+
+#services p {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* Контейнер с изображением и текстом */
+.image-text-container {
+    display: flex; /* Flexbox для горизонтального размещения */
+    align-items: flex-start; /* Выравнивание текста по верхнему краю изображения */
+    gap:20px; /* Расстояние между изображением и текстом */
+     
+}
+
+.image-text-container p {
+    color: black; /* Цвет текста */
+    width: 600px; /* Ширина изображения */
+    text-align: left; /* left, right, justify */
+    margin-bottom: 20px; /* Устанавливает интервал между абзацами */
+   
+}
+/* Стили для изображения */
+.image_profile {
+    width: 300px; /* Ширина изображения */
+    height: auto; /* Сохраняем пропорции */
+    object-fit: cover; /* Масштабирование без искажения */
+     margin: 20px 0; /* Відступи зверху та знизу */
+}
+
+.text-content {
+    flex: 1;
+}
+
+/* Стили для текста */
+.text-content p {
+    color: black; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    margin-bottom: 20px; /* Устанавливает интервал между абзацами */
+    margin: 0 0 20px 0; /* Відступи між абзацами: верхній 0, правий 0, нижній 20px, лівий 0 */
+    margin-top: 20px;
+}
+
+/* Останній абзац не має нижнього відступу */
+.text-content p:last-child {
+    margin-bottom: 0;
+}
+b {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* Заголовок */
+h1 {
+   
+    color: darkgreen;
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+@media (max-width: 768px) {
+    .image-text-container {
+        flex-direction: column; /* Зображення і текст вертикально */
+    }
+    .profile {
+        width: 100%; /* Зображення на всю ширину */
+    }
+    .philosophy {
+        width: 100%; /* Зображення на всю ширину */
+    }
+    .services {
+        width: 100%; /* Зображення на всю ширину */
+    }
+}
+
+.philosophy{
+    flex: 1;
+}
+
+.philosophy p{
+    color: black; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    margin: 0; /* Убираем отступы у параграфов */
+}
+.services{
+    flex: 1;
+}
+
+.services p{
+    color: black; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    margin: 0; /* Убираем отступы у параграфов */
+}
+
+#profile{
+    margin-bottom: 20px; /* Устанавливает интервал между абзацами */
+}
+
+
+/* Контактна сторінка */
+.contact-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2, .contact-info h2 {
+    margin-bottom: 20px;
+    color: darkgreen; /* Використовуємо колір заголовків з інших сторінок */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black; /* Колір тексту, як на інших сторінках */
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Розмір шрифту, як на інших сторінках */
+    box-sizing: border-box; /* Щоб padding не збільшував ширину */
+}
+
+.form-group textarea {
+    resize: vertical; /* Дозволяє змінювати висоту textarea вертикально */
+}
+
+.btn-submit {
+    width: 100%; /* Ширина кнопки 100% від батьківського контейнера */
+    background-color: darkgreen; /* Колір кнопки, як на інших сторінках */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box; /* Щоб padding не збільшував ширину */
+}
+
+.btn-submit:hover {
+    background-color: #228B22; /* Колір при наведенні */
+}
+
+/* Адаптивність для контактної сторінки */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* На малих екранах форма та інформація розташовуються вертикально */
+    }
+
+    .contact-form, .contact-info {
+        width: 100%; /* Займають всю ширину */
+    }
+}
+
+.bold, strong {
+    font-weight: bold !important;
+}
+              
+ /* Основные стили для реєстрації */
+ .sign_up-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+           
+}
+
+.sign_up-form {
+    flex: 1;
+    max-width: 500px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sign_up-form h2 {
+    margin-bottom: 20px;
+    color: darkgreen; /* Цвет заголовка, как на других страницах */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black; /* Цвет текста, как на других страницах */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Размер шрифта, как на других страницах */
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+.btn-submit {
+    width: 100%; /* Ширина кнопки 100% от родительского контейнера */
+    background-color: darkgreen; /* Цвет кнопки, как на других страницах */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+.btn-submit:hover {
+    background-color: #228B22; /* Цвет при наведении */
+}
+
+/* Адаптивность для формы */
+@media (max-width: 768px) {
+    .sign_up-container {
+        flex-direction: column; /* На малых экранах форма располагается вертикально */
+    }
+
+    .sign_up-form {
+        width: 100%; /* Занимает всю ширину */
+    }
+}
+
+.bold, strong {
+    font-weight: bold !important;
+}
+
+   /* Основні стили для форми авторизації*/
+   .log_in-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.log_in-form {
+    flex: 1;
+    max-width: 500px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.log_in-form h2 {
+    margin-bottom: 20px;
+    color: darkgreen; /* Колір заголовка, як на інших сторінках */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black; /* Колір тексту, як на інших сторінках */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Розмір шрифту, як на інших сторінках */
+    box-sizing: border-box; /* Щоб padding не збільшував ширину */
+}
+
+.btn-submit {
+    width: 100%; /* Ширина кнопки 100% від батьківського контейнера */
+    background-color: darkgreen; /* Колір кнопки, як на інших сторінках */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box; /* Щоб padding не збільшував ширину */
+}
+
+.btn-submit:hover {
+    background-color: #228B22; /* Колір при наведенні */
+}
+
+/* Адаптивність для форми */
+@media (max-width: 768px) {
+    .log_in-container {
+        flex-direction: column; /* На малих екранах форма розташовується вертикально */
+    }
+
+    .log_in-form {
+        width: 100%; /* Займає всю ширину */
+    }
+}
+
+.bold, strong {
+    font-weight: bold !important;
+}
+
+/*Стилі для форми Забули пароль?*/
+.forgot-password-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.forgot-password-form {
+    flex: 1;
+    max-width: 500px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-password-form h2 {
+    margin-bottom: 20px;
+    color: darkgreen; /* Колір заголовка, як на інших сторінках */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black; /* Колір тексту, як на інших сторінках */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Розмір шрифту, як на інших сторінках */
+    box-sizing: border-box; /* Щоб padding не збільшував ширину */
+}
+
+.btn-submit {
+    width: 100%; /* Ширина кнопки 100% від батьківського контейнера */
+    background-color: darkgreen; /* Колір кнопки, як на інших сторінках */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box; /* Щоб padding не збільшував ширину */
+}
+
+.btn-submit:hover {
+    background-color: #228B22; /* Колір при наведенні */
+}
+
+/* Адаптивність для форми */
+@media (max-width: 768px) {
+    .forgot-password-container {
+        flex-direction: column; /* На малих екранах форма розташовується вертикально */
+    }
+
+    .forgot-password-form {
+        width: 100%; /* Займає всю ширину */
+    }
+}
+
+.bold, strong {
+    font-weight: bold !important;
+}
+
+/* Основний контейнер для каталогів */
+.catalog-container {
+    display: flex; /* Використовуємо Flexbox для розташування каталогів у ряд */
+    justify-content: space-between; /* Рівномірно розподіляємо простір між елементами */
+    gap: 20px; /* Відступ між каталогами */
+    margin-top: 20px; /* Відступ зверху */
+}
+
+/* Стилі для кожного каталогу */
+.catalog-item {
+    flex: 1; /* Кожен елемент займає однакову ширину */
+    background-color: #f4f4f4; /* Фон (можна змінити під дизайн) */
+    border-radius: 10px; /* Закруглені кути */
+    overflow: hidden; /* Щоб контент не виходив за межі */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    text-align: center; /* Вирівнювання тексту по центру */
+    transition: transform 0.3s ease-in-out; /* Плавний ефект при наведенні */
+}
+
+/* Збільшення каталогу при наведенні */
+.catalog-item:hover {
+    transform: scale(1.05);
+}
+
+/* Стилі для зображень */
+.catalog-item img {
+    width: 100%; /* Адаптивне зображення */
+    height: 200%; /* Фіксована висота */
+    object-fit: cover; /* Обрізка зображення для рівномірного вигляду */
+    border-radius: 8px; /* Закруглення країв */
+}
+
+/* Стилі для опису каталогу */
+.catalog-description {
+    margin-top: 10px; /* Відступ зверху */
+    font-size: 16px; /* Розмір шрифту */
+    color: #333; /* Колір тексту */
+    font-weight: bold;
+}
+
+/* Стилі для кнопки перегляду каталогу */
+.catalog-item a {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Зміна кольору кнопки при наведенні */
+.catalog-item a:hover {
+    background-color: #228B22;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .catalog-container {
+        flex-direction: column; /* Розташування елементів вертикально */
+    }
+    .catalog-item {
+        margin-bottom: 20px; /* Відступ між елементами */
+    }
+}
+
+/* Основний контейнер для відео */
+.video-container {
+    display: flex; /* Використовуємо Flexbox для розташування відео в рядок */
+    justify-content: space-between; /* Рівномірно розподіляємо простір між відео */
+    gap: 20px; /* Відступ між відео */
+    margin-top: 20px; /* Відступ зверху */
+}
+
+/* Стилі для кожного відео */
+.video-item {
+    flex: 1; /* Кожен елемент займає однакову ширину */
+    background-color: #f4f4f4; /* Фон для відео (опціонально) */
+    border-radius: 10px; /* Закруглені кути */
+    overflow: hidden; /* Щоб контент не виходив за межі */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тінь (опціонально) */
+    text-align: center; /* Вирівнювання тексту по центру */
+    transition: transform 0.3s ease-in-out; /* Плавний ефект при наведенні */
+}
+
+/* Стилі для iframe (відео) */
+.video-item iframe {
+    width: 100%; /* Ширина відео на всю ширину блоку */
+    height: 200px; /* Висота відео */
+    border: none; /* Видаляємо рамку */
+    display: block; /* Виправляє можливі проблеми з позиціонуванням */
+    transition: transform 0.3s ease-in-out; /* Додаємо плавний ефект */
+}
+
+/* Стилі для опису відео */
+.video-description {
+    margin: 10px 0; /* Відступи зверху та знизу */
+    font-size: 16px; /* Розмір шрифту */
+    color: black; /* Колір тексту */
+    padding: 0 10px; /* Внутрішні відступи */
+    background-color: white; /* Початковий білий фон */                          
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;       
+}
+
+/* Додатковий ефект для iframe */
+.video-item:hover iframe {
+    transform: scale(1.1); /* Робимо iframe трохи більшим */
+}
+/* Зміна кольору фону та тексту при наведенні */
+.video-item:hover .video-description {
+    background-color: #228B22; /* Зелений фон */
+    color: white; /* Білий текст */
+}
+
+
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column; /* Відео розташовуються вертикально */
+    }
+    .video-item {
+        margin-bottom: 20px; /* Відступ між відео */
+    }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .video-item {
+        flex: 1 1 100%; /* На малих екранах відео займають всю ширину */
+    }
+}
+
+/*Стилі для аккардіону відео*/
+/* Стилі для акордеону */
+.accordion {
+    margin-top: 20px;
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #228B22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.accordion-button:hover {
+    background-color: #1c6b1c;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-content.open {
+    max-height: 1000px; /* Встановіть достатньо велике значення */
+}
+
+
+/*стилізація посилань*/
+.iframe-item {
+    width: 100%;
+    height: 400px; /* Висота iframe */
+    margin-bottom: 20px;
+}
+
+.iframe-item iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+}
+
+.useful-links-container {
+    margin-top: 20px;
+}
+
+.links-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.link-item {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Плавний ефект при наведенні */
+}
+
+.link-item a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.link-item iframe {
+    width: 100%;
+    height: 200px; /* Висота iframe */
+    border: none;
+    transition: transform 0.3s ease-in-out; /* Плавний ефект */
+}
+
+.link-item p {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: white; /* Початковий білий фон */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Плавний ефект */
+}
+
+
+/* Ефекти при наведенні на посилання */
+.link-item:hover {
+    transform: scale(1.05); /* Збільшення при наведенні */
+}
+
+.link-item:hover iframe {
+    transform: scale(1.1); /* Збільшення iframe при наведенні */
+}
+
+.link-item:hover p {
+    background-color: #228B22; /* Темно-зелений фон */
+    color: white; /* Білий текст */
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column; /* Відео розташовуються вертикально */
+    }
+    .video-item {
+        margin-bottom: 20px; /* Відступ між відео */
+    }
+    .links-row {
+        flex-direction: column; /* Посилання вертикально на малих екранах */
+    }
+    .link-item {
+        margin-bottom: 20px; /* Відступ між посиланнями */
+    }
+}
