@@ -20,7 +20,62 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuItems = document.querySelectorAll('li');
+
+    menuItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const submenu = item.querySelector('.submenu');
+            if (submenu) {
+                submenu.style.display = 'block';
+            }
+        });
+
+        item.addEventListener('mouseleave', () => {
+            const submenu = item.querySelector('.submenu');
+            if (submenu) {
+                submenu.style.display = 'none';
+            }
+        });
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
+
+ // Аккордеон для продуктів
+ const productAccordionButton = document.querySelector('.product-accordion .accordion-button');
+ const productAccordionContent = document.querySelector('.product-accordion .accordion-content');
+
+ if (productAccordionButton && productAccordionContent) {
+     productAccordionButton.addEventListener('click', function () {
+         productAccordionContent.classList.toggle('open');
+         if (productAccordionContent.classList.contains('open')) {
+             productAccordionButton.textContent = 'Сховати всі продукти';
+         } else {
+             productAccordionButton.textContent = 'Показати всі продукти';
+         }
+     });
+ }
+
+ document.querySelectorAll('.accordion-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const accordionContent = button.nextElementSibling;
+        button.classList.toggle('active');
+
+        // Определяем, какие ключи использовать
+        const closeKey = button.getAttribute('data-text-uk-close2') || button.getAttribute('data-text-uk-close3') || button.getAttribute('data-text-uk-close4');
+        const openKey = button.getAttribute('data-text-uk-open2') || button.getAttribute('data-text-uk-open3') || button.getAttribute('data-text-uk-open4');
+
+        if (button.classList.contains('active')) {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            button.textContent = openKey; // Используем ключ для открытого состояния
+        } else {
+            accordionContent.style.maxHeight = 0;
+            button.textContent = closeKey; // Используем ключ для закрытого состояния
+        }
+    });
+});
+
     // Аккордеон для відео
     const videoAccordionButton = document.querySelector('.video-accordion .accordion-button');
     const videoAccordionContent = document.querySelector('.video-accordion .accordion-content');
@@ -110,6 +165,8 @@ const translations = {
        "services_5": "- транспортування, монтаж та післяпродаже обслуговування",
        "links": "Корисні посилання",
        "video-links": "Відео",
+
+       "hight-zone": "НІЧНА ЗОНА",
         
        "contacts": "ЗВ'ЯЗАТИСЯ З НАМИ",
        "send": "Надіслати повідомлення",
@@ -142,6 +199,9 @@ const translations = {
         "user-name": "Ім'я користувача",
         "password_2": "Підтвердити пароль",
         "btn-submit_1": "Зареєструватися",
+
+        "plates": "Плитні матеріали",
+        "furni": "Фурнітура",
     },
 
     en: {
@@ -201,6 +261,7 @@ const translations = {
         "links": "Useful links",
         "video-links": "Videos",
        
+        "hight-zone": "HIGHT ZONE",
 
         "contacts": "CONTACTS",
         "send": "Send a message",
@@ -234,7 +295,8 @@ const translations = {
         "password_2": "Confirm password",
         "btn-submit_1": "Sign up",
         
-
+        "plates": "Plate materials",
+        "furni": "Furniture",
     },
 };
 
@@ -323,3 +385,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+/*ЯКІСТЬ*/
+function bringToFront(element) {
+    // Сбрасываем z-index для всех изображений
+    const images1 = document.querySelectorAll('.image_1');
+    const images2 = document.querySelectorAll('.image_2');
+    const allImages = [...images1, ...images2]; // Объединяем все изображения в один массив
+
+    allImages.forEach(img => {
+        img.style.zIndex = 1; // Сбрасываем z-index для всех изображений
+    });
+
+    // Устанавливаем z-index для активного изображения
+    element.style.zIndex = 10;
+
+    // Анимация: перемещение на передний план
+    element.style.transform = 'rotate(0deg) scale(1.1)';
+
+    // Возвращаем остальные изображения в исходное положение
+    allImages.forEach(img => {
+        if (img !== element) {
+            img.style.transform = img.style.transform.replace(/scale\([^)]+\)/, 'scale(1)');
+        }
+    });
+}
