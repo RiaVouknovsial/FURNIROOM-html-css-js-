@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КАТАЛОГИ - FURNIROOM</title>
+    <title>ЗВ'ЯЗАТИСЯ З НАМИ - FURNIROOM</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,9 +28,17 @@
                     <li><a href="services.html" data-lang-key="ПОСЛУГИ">ПОСЛУГИ</a></li>
                 </ul>
             </li>
-            <li><a href="#3" data-lang-key="ПРОДУКЦІЯ"><img src="images/products.png" alt="ПРОДУКЦІЯ" class="menu-icon"><span>ПРОДУКЦІЯ</span></a>
+            <li><a href="products.html" data-lang-key="ПРОДУКЦІЯ"><img src="images/products.png" alt="ПРОДУКЦІЯ" class="menu-icon"><span>ПРОДУКЦІЯ</span></a>
                 <ul class="submenu">
-                    <li><a href="#3-1" data-lang-key="НІЧНА ЗОНА">НІЧНА ЗОНА</a>
+                    <li><span data-lang-key="ДЕННА ЗОНА">ДЕННА ЗОНА</span>
+                        <ul class="submenu">
+                            <li><a href="#3-2-1" data-lang-key="Кухні">Кухні</a></li>
+                            <li><a href="#3-2-2" data-lang-key="Вітальні">Вітальні</a></li>
+                            <li><a href="#3-2-3" data-lang-key="Зони відпочинку">Зони відпочинку і бар</a></li>
+                            <li><a href="#3-2-4" data-lang-key="Кабінети">Кабінети</a></li>
+                        </ul>
+                    </li>
+                    <li><span data-lang-key="НІЧНА ЗОНА">НІЧНА ЗОНА</span>
                         <ul class="submenu">
                             <li><a href="#3-1-1" data-lang-key="Дитячі">Дитячі</a></li>
                             <li><a href="#3-1-2" data-lang-key="Двоярусні ліжка">Двоярусні ліжка</a></li>
@@ -39,15 +47,7 @@
                             <li><a href="#3-1-5" data-lang-key="Одномісні ліжка">Одномісні ліжка</a></li>
                         </ul>
                     </li>
-                    <li><a href="#3-2" data-lang-key="ДЕННА ЗОНА">ДЕННА ЗОНА</a>
-                        <ul class="submenu">
-                            <li><a href="#3-2-1" data-lang-key="Кухні">Кухні</a></li>
-                            <li><a href="#3-2-2" data-lang-key="Вітальні">Вітальні</a></li>
-                            <li><a href="#3-2-3" data-lang-key="Зони відпочинку">Зони відпочинку і бар</a></li>
-                            <li><a href="#3-2-4" data-lang-key="Кабінети">Кабінети</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#3-3" data-lang-key="РІЗНЕ">РІЗНЕ</a>
+                    <li><span data-lang-key="РІЗНЕ">РІЗНЕ</span>
                         <ul class="submenu">
                             <li><a href="#3-3-1" data-lang-key="Столи">Столи</a></li>
                             <li><a href="#3-3-2" data-lang-key="Полиці">Полиці</a></li>
@@ -56,7 +56,7 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="#4" data-lang-key="ЯКІСТЬ"><img src="images/quality.png" alt="ЯКІСТЬ" class="menu-icon"><span>ЯКІСТЬ</span></a>
+            <li><a href="quality.html" data-lang-key="ЯКІСТЬ"><img src="images/quality.png" alt="ЯКІСТЬ" class="menu-icon"><span>ЯКІСТЬ</span></a>
                 <ul class="submenu">
                     <li><a href="#4-1" data-lang-key="Плитні матеріали">Плитні матеріали</a></li>
                     <li><a href="#4-2" data-lang-key="Меблева фурнітура">Меблева фурнітура</a></li>
@@ -108,74 +108,77 @@
             <img src="images/uk.png" alt="English" class="flag-icon">
         </button>
     </div>
-    
     <footer class="footer">
         <p data-lang-key="footer_1">Всі права захищено &copy; 2025</p>
         <p data-lang-key="footer_2">FURNIROOM</p>
         <p data-lang-key="footer_3">Сокіл Вадим & Воловик Раїса</p>
     </footer>
+    
     </nav>
     
 </div>
-<!-- Основной контент -->
-<div class="main-content">
-    <h1><span data-lang-key="catalog">КАТАЛОГИ / ПРАЙСИ</span></h1>
-    <div class="catalog-container">
+ <!-- Основний контент -->
+ <div class="main-content">
+    <h1><span data-lang-key="contacts">ЗВ'ЯЗАТИСЯ З НАМИ</span></h1>
+    <div class="contact-container">
         
-        <!-- Каталог 1 -->
-        <div class="catalog-item">
-            <a href="catalogs/blum_1.pdf" target="_blank">
-                <img src="images/blum_1.png" alt="blum">
-                <p class="catalog-description">blum Catalogue and technical manual 2024-2025</p>
-            </a>
+        <!-- Форма зворотного зв'язку -->
+        <div class="contact-form">
+            <h2><span data-lang-key="send">Надіслати повідомлення</span></h2>
+            <form id="contactForm" action="#" method="post">
+                <div class="form-group">
+                    <label for="name"><span data-lang-key="name">Ваше повне ім'я:</span></label> 
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+             <!--  <div class="form-group">
+                    <label for="country"><span data-lang-key="country">Країна</span></label>
+                    <input type="text" id="country" name="country" required>
+                </div>
+                <div class="form-group">
+                    <label for="region"><span data-lang-key="region">Область</span></label>
+                    <input type="text" id="region" name="region" required>
+                </div>
+                <div class="form-group">
+                    <label for="city"><span data-lang-key="city">Місто</span></label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="street"><span data-lang-key="street">Вулиця</span></label>
+                    <input type="text" id="street" name="street" required>
+                </div>
+            -->
+                <div class="form-group">
+                    <label for="phone"><span data-lang-key="phone">Номер телефона</span></label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="email"><span data-lang-key="email">Електронна пошта</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message"><span data-lang-key="message">Повідомлення</span></label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit"><span data-lang-key="btn_send">Надіслати</span></button>
+            </form>
+            <p id="statusMessage"></p>
         </div>
         
-        <!-- Каталог 2 -->
-        <div class="catalog-item">
-            <a href="catalogs/blum_2.pdf" target="_blank">
-                <img src="images/blum_2.png" alt="Blum">
-                <p class="catalog-description"> blum Завіси. Посібник</p>
-            </a>
-        </div>
-        
-        <!-- Каталог 3 -->
-        <div class="catalog-item">
-            <a href="catalogs/blum_3.pdf" target="_blank">
-                <img src="images/blum_3.png" alt="Hettich">
-                <p class="catalog-description">blum Шухляди. Посібник</p>
-            </a>
+
+        <!-- Контактна інформація -->
+        <div class="contact-info">
+            <h2><span data-lang-key="address">Наша адреса</span></h2>
+            <p><span data-lang-key="add"><span class="bold">Адреса:</span> м. Дніпро, вул. Промислова, 123</span></p>
+            <p><span data-lang-key="tel"><span class="bold">Телефон:</span> +38 (067) 123-45-67</span></p>
+            <p><span data-lang-key="em"><span class="bold">Email:</span> info@furniroom.com</span></p>
+            <p><span data-lang-key="open"><span class="bold">Графік роботи:</span> Пн-Пт: 9:00 - 18:00</span></p>
         </div>
     </div>
-    
-    <div class="catalog-container">
-        
-        <!-- Каталог 4 -->
-        <div class="catalog-item">
-            <a href="catalogs/Muller_1.pdf" target="_blank">
-                <img src="images/Muller_1.png" alt="Muller">
-                <p class="catalog-description">Muller Петлі</p>
-            </a>
-        </div>
-        
-        <!-- Каталог 5 -->
-        <div class="catalog-item">
-            <a href="catalogs/blum.pdf" target="_blank">
-                <img src="images/blum.jpg" alt="Blum">
-                <p class="catalog-description">каталог</p>
-            </a>
-        </div>
-        
-        <!-- Каталог 6 -->
-        <div class="catalog-item">
-            <a href="catalogs/other.pdf" target="_blank">
-                <img src="images/other.jpg" alt="Other">
-                <p class="catalog-description">каталог</p>
-            </a>
-        </div>
-    </div>
 </div>
 </div>
-</div>
+
+
 <script src="scripts.js"></script>
 </div>
 </body>
