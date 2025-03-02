@@ -70,6 +70,8 @@ html {
     display: block; /* Показывает подменю при активации */
 }
 
+
+
 .footer {
     width: 25vh; /* Задает ширину 20% */
     background-color: #ddd; /* Цвет фона для тестирования */
@@ -692,6 +694,98 @@ h1 {
     }
 }
 
+/* Основний контейнер для продуктів */
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Дозволяє елементам переноситися на новий рядок */
+    flex-wrap: wrap;
+}
+
+/* Стилі для контейнера продукту */
+.product-item {
+    display: flex;
+    flex: 1 1 calc(33.333% - 20px);
+    flex-direction: column; /* Розташування елементів вертикально */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: #fff; /* Фон контейнера */
+}
+
+/* Стилі для зображення продукту */
+.product-image {
+    width: 100%;
+    height: 200px; /* Висота зображення */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Стилі для посилання */
+.category-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* Стилі для опису продукту */
+.product-description {
+    margin: 10px 0; /* Відступи зверху та знизу */
+    font-size: 16px; /* Розмір шрифту */
+    color: black; /* Колір тексту */
+    padding: 0 10px; /* Внутрішні відступи */
+    background-color: white; /* Білий фон */
+    text-align: center; /* Вирівнювання тексту по центру */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Ефект при наведенні на продукт */
+.product-item:hover {
+    transform: scale(1.1);
+}
+
+.product-item:hover .product-description {
+    background-color: #228B22; /* Зелений фон */
+    color: white; /* Білий текст */
+}
+
+/* Стилі для акордеону */
+.accordion {
+    margin-top: 20px;
+}
+
+.accordion-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #228B22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    
+}
+
+.accordion-button:hover {
+    background-color: #1c6b1c;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.accordion-content.open {
+    max-height: 1000px; /* Встановіть достатньо велике значення */
+}
+
 /* Основний контейнер для відео */
 .video-container {
     display: flex; /* Використовуємо Flexbox для розташування відео в рядок */
@@ -874,4 +968,155 @@ h1 {
     .link-item {
         margin-bottom: 20px; /* Відступ між посиланнями */
     }
+}
+
+/* Стилі для плитних матеріалів */
+
+.materials-container {
+    display: flex; /* Використовуємо flexbox для розташування елементів */
+    align-items: flex-start; /* Вирівнюємо елементи по верхньому краю */
+    gap: 20px; /* Відступ між текстом і картинками */
+    position: relative;
+    height: 700px; /* Висота контейнера */
+    max-width: 1200px; /* Максимальна ширина контейнера */
+    margin: 20px auto; /* Центрування контейнера */
+    padding: 20px; /* Внутрішній відступ */
+}
+
+.text-wrapper_1 {
+    width: 70%; /* Ширина текстового блоку */
+    padding-right: 20px; /* Відступ від картинок */
+    box-sizing: border-box; /* Враховуємо padding у ширині */
+}
+
+.text-wrapper_1 p {
+    top: 0;
+    margin: 0 0 16px 0; /* Відступи між абзацами */
+    font-size: 16px; /* Розмір тексту */
+    line-height: 1.5; /* Міжрядковий інтервал */
+}
+
+.images-wrapper_1 {
+    top: 20px;
+    width: 30%; /* Ширина блоку з картинками */
+    position: relative; /* Відносне позиціонування для абсолютного позиціонування картинок */
+    min-height: 400px; /* Мінімальна висота блоку з картинками */
+}
+
+.image_1 {
+    position: absolute; /* Абсолютне позиціонування для ефекту нашарування */
+    width: 200px; /* Розмір зображень */
+    height: auto;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+.image_1:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: rotate(5deg);
+}
+
+.image_1:nth-child(2) {
+    top: 90px;
+    left: 50px;
+    transform: rotate(-5deg);
+}
+
+.image_1:nth-child(3) {
+    top: 150px;
+    left: 20px;
+    transform: rotate(5deg);
+}
+
+.image_1:nth-child(4) {
+    top: 210px;
+    left: 50px;
+    transform: rotate(-8deg);
+}
+
+.image_1:nth-child(5) {
+    top: 320px;
+    left: 20px;
+    transform: rotate(5deg);
+}
+
+.image_1:nth-child(6) {
+    top: 370px;
+    left: 40px;
+    transform: rotate(-6deg);
+}
+
+.image_1:nth-child(7) {
+    top: 460px;
+    left: 30px;
+    transform: rotate(9deg);
+}
+
+/*стилі для фурнітури*/
+.furniture-container {
+    display: flex; /* Використовуємо flexbox для розташування елементів */
+    align-items: flex-start; /* Вирівнюємо елементи по верхньому краю */
+    gap: 20px; /* Відступ між картинками і текстом */
+    position: relative;
+    height: 700px; /* Висота контейнера */
+    max-width: 1200px; /* Максимальна ширина контейнера */
+    margin: 20px; /* Центрування контейнера */
+    padding: 20px; /* Внутрішній відступ */
+  }
+  
+ .images-wrapper_2 {
+    top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє картинкам переноситися на новий рядок */
+    gap: 10px; /* Відступ між картинками */
+    width: 30%; /* Ширина блоку з картинками */
+    position: relative;
+ }
+
+  .image_2 {
+    position: absolute;
+    width: 200px; /* Размер изображений */
+    height: auto;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+  }
+  
+  .image_2:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: rotate(-5deg);
+  }
+  
+  .image_2:nth-child(2) {
+    top: 90px;
+    left: 130px;
+    transform: rotate(5deg);
+  }
+  
+  .image_2:nth-child(3) {
+    top: 150px;
+    left: 30px;
+    transform: rotate(-3deg);
+  }
+  
+  .image_2:nth-child(4) {
+    top: 230px;
+    left: 130px;
+    transform: rotate(2deg);
+  }
+  .text-wrapper_2 {
+    width: 70%; /* Ширина текстового блоку */
+    flex: 1; /* Текст займає доступний простір праворуч */
+    padding-left: 60px; /* Відступ від картинок */
+    box-sizing: border-box; /* Враховуємо padding у ширині */
+}
+.text-wrapper_2 p {
+    margin: 0 0; /* Видаляємо зовнішні відступи у абзацу */
+    font-size: 16px; /* Розмір тексту */
+    line-height: 1.5; /* Міжрядковий інтервал */
 }
