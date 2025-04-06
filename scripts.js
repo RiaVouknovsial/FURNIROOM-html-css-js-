@@ -1,6 +1,5 @@
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
     const menuLinks = document.querySelectorAll('a[href^="#"]');
 
@@ -63,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
         button.classList.toggle('active');
 
         // Определяем, какие ключи использовать
-        const closeKey = button.getAttribute('data-text-uk-close2') || button.getAttribute('data-text-uk-close3') || button.getAttribute('data-text-uk-close4');
-        const openKey = button.getAttribute('data-text-uk-open2') || button.getAttribute('data-text-uk-open3') || button.getAttribute('data-text-uk-open4');
+        const closeKey = button.getAttribute('data-text-uk-close2') || button.getAttribute('data-text-uk-close3') || button.getAttribute('data-text-uk-close4') || button.getAttribute('data-text-uk-close7');
+        const openKey = button.getAttribute('data-text-uk-open2') || button.getAttribute('data-text-uk-open3') || button.getAttribute('data-text-uk-open4') || button.getAttribute('data-text-uk-open7');
 
         if (button.classList.contains('active')) {
             accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
@@ -75,6 +74,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+// Аккордеон для каталогів
+const catalogAccordionButton = document.querySelector('.catalog-accordion .accordion-button');
+const catalogAccordionContent = document.querySelector('.catalog-accordion .accordion-content');
+
+if (catalogAccordionButton && catalogAccordionContent) {
+    catalogAccordionButton.addEventListener('click', function () {
+        catalogAccordionContent.classList.toggle('open');
+        if (catalogAccordionContent.classList.contains('open')) {
+            catalogAccordionButton.textContent = 'Сховати всі каталоги';
+        } else {
+            catalogAccordionButton.textContent = 'Показати всі каталоги';
+        }
+    });
+}
+
+// Аккордеон для прайсів
+const priceAccordionButton = document.querySelector('.price-accordion .accordion-button');
+const priceAccordionContent = document.querySelector('.price-accordion .accordion-content');
+
+if (priceAccordionButton && priceAccordionContent) {
+    priceAccordionButton.addEventListener('click', function () {
+        priceAccordionContent.classList.toggle('open');
+        if (priceAccordionContent.classList.contains('open')) {
+            priceAccordionButton.textContent = 'Сховати всі прайси';
+        } else {
+            priceAccordionButton.textContent = 'Показати всі прайси';
+        }
+    });
+}
 
     // Аккордеон для відео
     const videoAccordionButton = document.querySelector('.video-accordion .accordion-button');
@@ -106,6 +135,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+ // Аккордеон для кабінетів
+ const linksAccordionButton = document.querySelector('.links-accordion .accordion-button');
+ const linksAccordionContent = document.querySelector('.links-accordion .accordion-content');
+
+ if (linksAccordionButton && linksAccordionContent) {
+     linksAccordionButton.addEventListener('click', function () {
+         linksAccordionContent.classList.toggle('open');
+         if (linksAccordionContent.classList.contains('open')) {
+             linksAccordionButton.textContent = 'Сховати всі кабінети';
+         } else {
+             linksAccordionButton.textContent = 'Показати всі кабінети';
+         }
+     });
+ }
+
+
+// Отримуємо параметри з URL
+const urlParams = new URLSearchParams(window.location.search);
+const imageUrl = urlParams.get('image');
+const title = urlParams.get('title');
+
+// Встановлюємо зображення та заголовок
+if (imageUrl) {
+    document.getElementById('largeProductImage').src = decodeURIComponent(imageUrl);
+}
+if (title) {
+    document.getElementById('productTitle').textContent = decodeURIComponent(title);
+}
 
 // Объект переводов
 const translations = {
@@ -155,14 +213,14 @@ const translations = {
        "profile_text_1": "Компанія спеціалізується на корпусних меблях-трансформерах, в яких поєднуються багатофункціональність, органомічність і сучасність інтер'єрів.",
        "profile_text_2": "Дизайни, які розробляються, орієнтовані на замовника, враховують максимум побажань по кольорах та функціоналу.",
        "profile_text_3": "Ми зможемо надати різні варіанти корпусних меблів для інтер'єрів: від комунальної квартири до котеджів на будь-який смак і достаток.",
-       "philosophy_text_1": "Залишаючись незмінно вірним оригінальній якості, бренд Furniroom прагне надати класичному стилю нове звучання, втілюючи його в сучасних інтер'єрах віталень та спалень.",       
-       "philosophy_text_2": "Компанія Furniroom розробляє дизайни, витримані в теплих і насичених тонах, які рясніють деталями та ремінісценціями елегантних інтер'єрів трансатлантичних лайнерів XIX століття і немов просякнуті солонуватим морським повітрям. У неповторному дизайні цих творів теслярського мистецтва, виконаних із матеріалів вищої якості, нероздільно сплетено старе та нове.", 
-        "philosophy_text_3": "Стиль Furniroom, що незмінно залишається вірним своїм витокам, але поданий зовсім по-новому, не тільки тішить погляд, а й зачіпає потаємні струни душі і лише потім. ",
+       "philosophy_text_1": "Залишаючись незмінно вірним оригінальній якості, бренд FURNIROOM прагне надати класичному стилю нове звучання, втілюючи його в сучасних інтер'єрах віталень та спалень.",       
+       "philosophy_text_2": "Компанія FURNIROOM розробляє дизайни, в яких поєднані функціональність, органомічність і оптимізація вільного простору. У неповторному дизайні цих творів теслярського мистецтва, виконаних із матеріалів вищої якості, нероздільно сплетено консерватизм і новаторство.", 
+        "philosophy_text_3": "Стиль FURNIROOM, що незмінно залишається вірним своїм витокам, але поданий зовсім по-новому, не тільки тішить погляд, а й зачіпає потаємні струни душі.",
        "services_1": "- консультації із бригадою архітекторів та техніків",
        "services_2": "- розробка персональних проєктов для всіх бажаючих",
        "services_3": "- об'ємний рендеринг проектів, що розробляються",
        "services_4": "- виїзд на місце для здійснення вимірів",
-       "services_5": "- транспортування, монтаж та післяпродаже обслуговування",
+       "services_5": "- транспортування, монтаж та післяпродажне обслуговування",
        "links": "Корисні посилання",
        "video-links": "Відео",
 
@@ -202,6 +260,17 @@ const translations = {
 
         "plates": "Плитні матеріали",
         "furni": "Фурнітура",
+
+        "Пропозиція": "Пропозиція",
+        "Фотогалерея": "Фотогалерея",
+        "Креслення": "Креслення",
+
+        "desc": "Опис продукту",
+        "product_description" : "Англійський письмовий стіл",
+        "material": "Матеріал: Натуральне дерево (дуб)",
+        "dimensions": "Розміри: 180см x 80см x 75см",
+        "color": "Колір: Натуральний дуб",
+        "features": "Особливості: Ввидвижні скринькі",
     },
 
     en: {
@@ -250,9 +319,9 @@ const translations = {
         "profile_text_1": "The company specializes in case furniture-transformers, which combine multifunctionality, organicity and modern interiors.", 
         "profile_text_2": "The designs that are developed are focused on the customer, taking into account the maximum wishes in terms of colors and functionality.",
         "profile_text_3": "We will be able to provide various options of cabinet furniture for interiors: from a communal apartment to cottages for every taste and wealth",
-        "philosophy_text_1": "Remaining faithful to the original quality, the Furniroom brand strives to give a new sound to the classic style, embodying it in modern interiors of living rooms and bedrooms.", 
-        "philosophy_text_2": "The Furniroom company develops designs made in warm and saturated colors, which are full of details and reminiscences of the elegant interiors of transatlantic liners of the 19th century and seem to be permeated with salty sea air. In the unique design of these works of carpentry art, made of the highest quality materials, the old and the new are inseparably woven together.", 
-        "philosophy_text_3": "The style of Furniroom, which remains faithful to its origins, but presented in a completely new way, not only pleases the eye, but also touches the secret strings of the soul and only then.",
+        "philosophy_text_1": "Remaining faithful to the original quality, the FURNIROOM brand strives to give a new sound to the classic style, embodying it in modern interiors of living rooms and bedrooms.", 
+        "philosophy_text_2": "The FURNIROOM company develops that combine functionality, organic design, and optimization of free space. The unique design of these works of carpentry art, made of the highest quality materials, inseparably combines conservatism and innovation.", 
+        "philosophy_text_3": "The style of FURNIROOM, which remains faithful to its origins, but presented in a completely new way, not only pleases the eye, but also touches the secret strings of the soul.",
         "services_1": "- consultations with a team of architects and technicians",
         "services_2": "- development of personal projects for everyone",
         "services_3": "- volumetric rendering of projects under development",
@@ -297,6 +366,17 @@ const translations = {
         
         "plates": "Plate materials",
         "furni": "Furniture",
+
+        "Пропозиція": "Proposition",
+        "Фотогалерея": "Photogallery",
+        "Креслення": "Drawings",
+
+        "desc": "Description",
+        "product_description" : "English desk",
+        "material": "Material: Natural wood (oak)",
+        "dimensions": "Dimensions: 180cm x 80cm x 75cm",
+        "color": "Color: Natural oak",
+        "features": "Features: Retractable screens",
     },
 };
 
@@ -409,3 +489,190 @@ function bringToFront(element) {
         }
     });
 }
+
+//product_1
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Обрабатываем каждую карусель отдельно
+    document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
+        const carousel = wrapper.querySelector('.owl-carousel');
+        const items = wrapper.querySelectorAll('.item');
+        const prevBtn = wrapper.querySelector('.prev-btn');
+        const nextBtn = wrapper.querySelector('.next-btn');
+        
+        let currentIndex = 0;
+        let itemWidth = items[0] ? items[0].offsetWidth + 10 : 0;
+        
+        function updateCarousel() {
+            if (!carousel || !items.length) return;
+            
+            carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+            
+            // Управление видимостью кнопок
+            prevBtn.style.display = currentIndex <= 0 ? 'none' : 'block';
+            nextBtn.style.display = currentIndex >= items.length - 4 ? 'none' : 'block';
+        }
+        
+        function nextSlide() {
+            if (currentIndex < items.length - 4) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+        
+        // Инициализация
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            updateCarousel();
+        }
+        
+        // Обработка изменения размеров
+        window.addEventListener('resize', function() {
+            itemWidth = items[0] ? items[0].offsetWidth + 10 : 0;
+            updateCarousel();
+        });
+    });
+});
+
+// ==================== ФУНКЦІЯ ГЕНЕРАЦІЇ ACCOUNT ID ====================
+// ==================== ФУНКЦІЯ ГЕНЕРАЦІЇ ACCOUNT ID ====================
+function generateAccountId() {
+    // Генеруємо числовий ID (int32)
+    const timestamp = Date.now();
+    const randomDigits = Math.floor(Math.random() * 900000) + 100000;
+    return timestamp % 1000000 * 1000000 + randomDigits % 1000000;
+}
+
+// ==================== ВАЛІДАЦІЯ ДОВЖИНИ ПОЛЯ ====================
+function validateField(value, fieldName, min, max) {
+    if (!value || value.length < min) {
+        throw new Error(`${fieldName} має містити щонайменше ${min} символів`);
+    }
+    if (value.length > max) {
+        throw new Error(`${fieldName} має містити не більше ${max} символів`);
+    }
+    return true;
+}
+
+// ==================== ОБРОБНИК ФОРМИ РЕЄСТРАЦІЇ ====================
+document.querySelector('.sign_up-form form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    try {
+        // Генерація та отримання даних
+        const accountId = generateAccountId();
+        const accountName = document.getElementById('accountName').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        // Валідація даних
+        if (password !== confirmPassword) {
+            throw new Error('Паролі не співпадають!');
+        }
+
+        // Перевірка довжини полів згідно Swagger
+        validateField(accountName, "Ім'я користувача", 1, 50);
+        validateField(email, "Email", 1, 254);
+        validateField(password, "Пароль", 1, 128);
+
+        console.log('Спроба реєстрації:', { 
+            accountId, 
+            accountName, 
+            email, 
+            passwordHash: '***' 
+        });
+
+        // Налаштування запиту
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+        const response = await fetch('https://furniroom-api-we1a.onrender.com/authorization/sign-up', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                accountId: accountId, // Тепер integer
+                accountName: accountName,
+                email: email,
+                passwordHash: password
+            }),
+            signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+
+        // Обробка відповіді
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.message || `HTTP помилка: ${response.status}`);
+        }
+
+        const result = await response.json();
+        
+        // Збереження даних
+        localStorage.setItem('tempAccountData', JSON.stringify({
+            accountId,
+            accountName,
+            email
+        }));
+
+        alert('Реєстрація пройшла успішно! Ваш ID: ' + accountId);
+        window.location.href = 'log_in.html';
+
+    } catch (error) {
+        console.error('Деталі помилки:', error);
+        alert(`Помилка: ${error.message || "Невідома помилка"}`);
+    }
+});
+
+// ==================== ОБРАБОТКА ФОРМЫ ВХОДА ====================
+document.querySelector('.log_in-form form').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Предотвращаем стандартную отправку формы
+
+    // Получаем данные из формы
+    const usernameOrEmail = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        // Отправляем данные на API для входа
+        const response = await fetch('https://furniroom-api-we1a.onrender.com/authorization/sign-in', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                AccountNameOrEmail: usernameOrEmail,
+                PasswordHash: password // На практике пароль должен хешироваться на сервере
+            }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            // Сохраняем токен (если API его возвращает)
+            if (result.token) {
+                localStorage.setItem('authToken', result.token);
+                localStorage.setItem('userData', JSON.stringify(result.user)); // Сохраняем данные пользователя
+            }
+            
+            alert('Вход выполнен успешно!');
+            window.location.href = 'index.html'; // Перенаправляем на главную страницу
+        } else {
+            alert(`Ошибка: ${result.message || 'Неверное имя пользователя или пароль'}`);
+        }
+    } catch (error) {
+        alert('Ошибка подключения к серверу');
+        console.error(error);
+    }
+});
