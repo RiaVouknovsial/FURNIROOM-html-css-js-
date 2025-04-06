@@ -20,7 +20,7 @@
          <nav id="menuVertical">
             <div>
         <ul>
-            <li><a href="index.html" data-lang-key="main"><img src="images/home.png" alt="main" class="menu-icon"><span>ГОЛОВНА</span></a></li>
+           <!--<li><a href="index.html" data-lang-key="main"><img src="images/home.png" alt="main" class="menu-icon"><span>ГОЛОВНА</span></a></li>-->
             <li><a href="about.html" data-lang-key="about"><img src="images/about-us.png" alt="about" class="menu-icon"><span>ПРО НАС</span></a>
                 <ul class="submenu">
                     <li><a href="profile.html" data-lang-key="ПРОФІЛЬ">ПРОФІЛЬ КОМПАНІЇ</a></li>
@@ -32,10 +32,10 @@
                 <ul class="submenu">
                     <li><span data-lang-key="ДЕННА ЗОНА">ДЕННА ЗОНА</span>
                         <ul class="submenu">
-                            <li><a href="#3-2-1" data-lang-key="Кухні">Кухні</a></li>
-                            <li><a href="#3-2-2" data-lang-key="Вітальні">Вітальні</a></li>
-                            <li><a href="#3-2-3" data-lang-key="Зони відпочинку">Зони відпочинку і бар</a></li>
-                            <li><a href="#3-2-4" data-lang-key="Кабінети">Кабінети</a></li>
+                            <li><a href="kitchens/kitchen_products.html" data-lang-key="Кухні">Кухні</a></li>
+                            <li><a href="living_rooms/living_room_products.html" data-lang-key="Вітальні">Вітальні</a></li>
+                            <li><a href="recreation_areas/recreation_area_products.html" data-lang-key="Зони відпочинку">Зони відпочинку і бар</a></li>
+                            <li><a href="offices/offices_products.html" data-lang-key="Кабінети">Кабінети</a></li>
                         </ul>
                     </li>
                     <li><span data-lang-key="НІЧНА ЗОНА">НІЧНА ЗОНА</span>
@@ -93,7 +93,7 @@
             </li>
             <li><a href="catalog.html" data-lang-key="catalog"><img src="images/price.png" alt="КАТАЛОГ" class="menu-icon"><span>КАТАЛОГИ / ПРАЙСИ</span></a></li>
             <li><a href="videos.html" data-lang-key="ВІДЕО"><img src="images/video.png" alt="ВІДЕО" class="menu-icon"><span>ВІДЕО / КОРИСНІ ПОСИЛАННЯ</span></a></li>
-            <li><a href="#8" data-lang-key="НОВИНИ"><img src="images/news.png" alt="НОВИНИ / БЛОГ" class="menu-icon"><span>НОВИНИ / БЛОГ</span></a></li>
+            <!--<li><a href="#8" data-lang-key="НОВИНИ"><img src="images/news.png" alt="НОВИНИ / БЛОГ" class="menu-icon"><span>НОВИНИ / БЛОГ</span></a></li>-->
             <li><a href="log_in.html" data-lang-key="ВХІД"><img src="images/log_in.png" alt="ВХІД" class="menu-icon"><span>УВІЙТИ</span></a></li>
             <li><a href="sign_up.html" data-lang-key="РЕГІСТР"><img src="images/sign_up.png" alt="РЕГІСТР" class="menu-icon"><span>ЗАРЕЄСТРУВАТИСЯ</span></a></li>
             <li><a href="contacts.html" data-lang-key="КОНТАКТИ"><img src="images/contacts.png" alt="ЗВ'ЯЗАТИСЯ З НАМИ" class="menu-icon"><span>ЗВ'ЯЗАТИСЯ З НАМИ</span></a></li>
@@ -127,11 +127,11 @@
                 <h2><span data-lang-key="signup">Реєстрація</span></h2>
                 <form action="/register" method="post">
                     <div class="form-group">
-                        <label for="username"><span data-lang-key="user-name">Ім'я користувача</span></label>
-                        <input type="text" id="username" name="username" required>
+                        <label for="accountName"><span data-lang-key="user-name">Ім'я користувача</span></label>
+                        <input type="text" id="accountName" name="accountName" required>
                     </div>
                     <div class="form-group">
-                        <label for="email"><span data-lang-key="email">Електронна  пошта</span></label>
+                        <label for="email"><span data-lang-key="email">Електронна пошта</span></label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
